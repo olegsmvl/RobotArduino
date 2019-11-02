@@ -1,0 +1,55 @@
+{
+    "configurations": [
+        {
+            "name": "!!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT AND USE https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "c:/work/Robot_project/RobotArduino/include",
+                "c:/work/Robot_project/RobotArduino/src",
+                "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/ArduinoJson_ID64/src",
+                "C:/Users/10/.platformio/packages/framework-arduinoavr/cores/arduino",
+                "C:/Users/10/.platformio/packages/framework-arduinoavr/variants/mega",
+                "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/EEPROM/src",
+                "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/HID/src",
+                "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/SPI/src",
+                "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/SoftwareSerial/src",
+                "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/Wire/src",
+                "C:/Users/10/.platformio/packages/tool-unity",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "c:/work/Robot_project/RobotArduino/include",
+                    "c:/work/Robot_project/RobotArduino/src",
+                    "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/ArduinoJson_ID64/src",
+                    "C:/Users/10/.platformio/packages/framework-arduinoavr/cores/arduino",
+                    "C:/Users/10/.platformio/packages/framework-arduinoavr/variants/mega",
+                    "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/EEPROM/src",
+                    "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/HID/src",
+                    "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/SPI/src",
+                    "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/SoftwareSerial/src",
+                    "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/Wire/src",
+                    "C:/Users/10/.platformio/packages/tool-unity",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=40003",
+                "ARDUINO_AVR_MEGA2560",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10805",
+                "__AVR_ATmega2560__",
+                ""
+            ],
+            "intelliSenseMode": "clang-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "compilerPath": "\"C:/Users/10/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe\" -mmcu=atmega2560"
+        }
+    ],
+    "version": 4
+}
