@@ -10,6 +10,8 @@
 
 #include <ArduinoJson.h>
 
+  StaticJsonDocument<200> doc;
+
 void setup() {
   // Initialize Serial port
   Serial.begin(9600);
@@ -20,7 +22,7 @@ void setup() {
   // Inside the brackets, 200 is the RAM allocated to this document.
   // Don't forget to change this value to match your requirement.
   // Use arduinojson.org/v6/assistant to compute the capacity.
-  StaticJsonDocument<200> doc;
+
 
   // StaticJsonObject allocates memory on the stack, it can be
   // replaced by DynamicJsonDocument which allocates in the heap.
@@ -49,7 +51,7 @@ void setup() {
 
   // Generate the prettified JSON and send it to the Serial port.
   //
-  serializeJsonPretty(doc, Serial);
+
   // The above line prints:
   // {
   //   "sensor": "gps",
@@ -62,7 +64,8 @@ void setup() {
 }
 
 void loop() {
-  // not used in this example
+  serializeJsonPretty(doc, Serial);
+  delay(3000);
 }
 
 // See also
