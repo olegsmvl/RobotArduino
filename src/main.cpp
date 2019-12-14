@@ -1,21 +1,22 @@
 #include <Arduino.h>
-
-// ArduinoJson - arduinojson.org
-// Copyright Benoit Blanchon 2014-2019
-// MIT License
-//
-// This example shows how to generate a JSON document with ArduinoJson.
-//
-// https://arduinojson.org/v6/example/generator/
+#include <Wire.h> //I2C Arduino Library
 
 #include <ArduinoJson.h>
 
   StaticJsonDocument<200> doc;
+    int addr = 0x1E; //I2C Address for The HMC5883
 
 void setup() {
-  // Initialize Serial port
   Serial.begin(9600);
   while (!Serial) continue;
+
+
+
+  Wire.begin();
+Wire.beginTransmission(addr);
+Wire.write(0x02);
+Wire.write(0x00); //Continuously Measure
+Wire.endTransmission();
 
   // Allocate the JSON document
   //
@@ -31,36 +32,32 @@ void setup() {
 
   // Add values in the document
   //
-  doc["sensor"] = "gps";
-  doc["time"] = 1351824120;
 
-  // Generate the prettified JSON and send it to the Serial port.
-  //
 
-  // The above line prints:
-  // {
-  //   "sensor": "gps",
-  //   "time": 1351824120,
-  //   "data": [
-  //     48.756080,
-  //     2.302038
-  //   ]
-  // }
+
 }
 
 void loop() {
-  serializeJson(doc, Serial);
-  delay(3000);
-}
+  int x,y,z; //triple axis data
+  Wire.beginTransmission(addr);
+  Wire.write(0x03);
+  Wire.endTransmission();
+  //Read the data
+  Wire.requestFrom(addr, 6);
+  if(6<=Wire.available())
+    {
+      x = Wire.read()<<8; //MSB  x 
+      x |= Wire.read(); //LSB  x
+      z = Wire.read()<<8; //MSB  z
+      z |= Wire.read(); //LSB z
+      y = Wire.read()<<8; //MSB y
+      y |= Wire.read(); //LSB y
+    }
 
-// See also
-// --------
-//
-// https://arduinojson.org/ contains the documentation for all the functions
-// used above. It also includes an FAQ that will help you solve any
-// serialization problem.
-//
-// The book "Mastering ArduinoJson" contains a tutorial on serialization.
-// It begins with a simple example, like the one above, and then adds more
-// features like serializing directly to a file or an HTTP request.
-// Learn more at https://arduinojson.org/book/
+  doc["x"] = x;
+  doc["y"] = y;
+  doc["z"] = z;
+
+  serializeJson(doc, Serial);
+  delay(50);
+}
