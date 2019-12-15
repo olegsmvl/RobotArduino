@@ -8,8 +8,8 @@
             "includePath": [
                 "c:/work/Robot_project/RobotArduino/include",
                 "c:/work/Robot_project/RobotArduino/src",
-                "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/ArduinoJson_ID64/src",
                 "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/Wire/src",
+                "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/ArduinoJson_ID64/src",
                 "C:/Users/10/.platformio/packages/framework-arduinoavr/cores/arduino",
                 "C:/Users/10/.platformio/packages/framework-arduinoavr/variants/mega",
                 "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/Adafruit MPU6050_ID6782",
@@ -25,8 +25,8 @@
                 "path": [
                     "c:/work/Robot_project/RobotArduino/include",
                     "c:/work/Robot_project/RobotArduino/src",
-                    "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/ArduinoJson_ID64/src",
                     "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/Wire/src",
+                    "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/ArduinoJson_ID64/src",
                     "C:/Users/10/.platformio/packages/framework-arduinoavr/cores/arduino",
                     "C:/Users/10/.platformio/packages/framework-arduinoavr/variants/mega",
                     "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/Adafruit MPU6050_ID6782",

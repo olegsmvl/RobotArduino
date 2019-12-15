@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Commands.h>
 #include <Wire.h> //I2C Arduino Library
 
 #include <ArduinoJson.h>
@@ -70,17 +71,30 @@ while (Serial.available() > 0) {
     Serial.print("String: ");
     Serial.println(inString);
 
-  deserializeJson(InData, inString);
-  int val = InData["value"];
-  Serial.print("value: ");
-  Serial.println(val);
+    deserializeJson(InData, inString);
+    int command = InData["command"];
+    Serial.print("command: ");
+    Serial.println(command);
 
-  if (val == 1){
-    digitalWrite(2, LOW);
-  }
-  else{
-    digitalWrite(2, HIGH);
-  }
+    switch(command){
+      case lighton:
+      digitalWrite(2, LOW);
+        break;
+      case lightoff:
+      digitalWrite(2, HIGH);
+        break;
+        default:
+        break;
+    }
+
+  // if (val == "lighton"){
+  //   digitalWrite(2, LOW);
+  // }
+
+  //   if (val == "lighton"){
+  //   digitalWrite(2, LOW);
+  // }
+
 
     inString = ""; 
   }
