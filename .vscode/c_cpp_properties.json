@@ -9,6 +9,7 @@
                 "c:/work/Robot_project/RobotArduino/include",
                 "c:/work/Robot_project/RobotArduino/src",
                 "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/ArduinoJson_ID64/src",
+                "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/Wire/src",
                 "C:/Users/10/.platformio/packages/framework-arduinoavr/cores/arduino",
                 "C:/Users/10/.platformio/packages/framework-arduinoavr/variants/mega",
                 "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/Adafruit MPU6050_ID6782",
@@ -16,7 +17,6 @@
                 "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/HID/src",
                 "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/SPI/src",
                 "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/SoftwareSerial/src",
-                "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/Wire/src",
                 "C:/Users/10/.platformio/packages/tool-unity",
                 ""
             ],
@@ -26,6 +26,7 @@
                     "c:/work/Robot_project/RobotArduino/include",
                     "c:/work/Robot_project/RobotArduino/src",
                     "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/ArduinoJson_ID64/src",
+                    "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/Wire/src",
                     "C:/Users/10/.platformio/packages/framework-arduinoavr/cores/arduino",
                     "C:/Users/10/.platformio/packages/framework-arduinoavr/variants/mega",
                     "c:/work/Robot_project/RobotArduino/.pio/libdeps/megaatmega2560/Adafruit MPU6050_ID6782",
@@ -33,7 +34,6 @@
                     "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/HID/src",
                     "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/SPI/src",
                     "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/SoftwareSerial/src",
-                    "C:/Users/10/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/Wire/src",
                     "C:/Users/10/.platformio/packages/tool-unity",
                     ""
                 ]

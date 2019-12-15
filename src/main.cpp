@@ -4,19 +4,22 @@
 #include <ArduinoJson.h>
 
   StaticJsonDocument<200> doc;
+  StaticJsonDocument<200> InData;
     int addr = 0x1E; //I2C Address for The HMC5883
+    String inString;
 
 void setup() {
   Serial.begin(9600);
   while (!Serial) continue;
 
-
+  pinMode(2, OUTPUT); 
+  digitalWrite(2, HIGH);
 
   Wire.begin();
-Wire.beginTransmission(addr);
-Wire.write(0x02);
-Wire.write(0x00); //Continuously Measure
-Wire.endTransmission();
+  Wire.beginTransmission(addr);
+  Wire.write(0x02);
+  Wire.write(0x00); //Continuously Measure
+  Wire.endTransmission();
 
   // Allocate the JSON document
   //
@@ -59,5 +62,30 @@ void loop() {
   doc["z"] = z;
 
   serializeJson(doc, Serial);
+
+while (Serial.available() > 0) {
+  int inChar = Serial.read();
+    inString += (char)inChar; 
+  if (inChar == '\n') {
+    Serial.print("String: ");
+    Serial.println(inString);
+
+  deserializeJson(InData, inString);
+  int val = InData["value"];
+  Serial.print("value: ");
+  Serial.println(val);
+
+  if (val == 1){
+    digitalWrite(2, LOW);
+  }
+  else{
+    digitalWrite(2, HIGH);
+  }
+
+    inString = ""; 
+  }
+}
+
+
   delay(50);
 }
