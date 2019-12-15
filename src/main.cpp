@@ -66,7 +66,7 @@ void loop() {
 while (Serial.available() > 0) {
   int inChar = Serial.read();
     inString += (char)inChar; 
-  if (inChar == '\n') {
+  if (inChar == '}') {
     Serial.print("String: ");
     Serial.println(inString);
 
