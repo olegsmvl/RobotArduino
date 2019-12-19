@@ -1,4 +1,6 @@
 enum Commands{
     lighton,
-    lightoff
+    lightoff,
+    forward,
+    stop
 };
