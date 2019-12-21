@@ -3,13 +3,14 @@
         
 Robot::Robot(){
     //подключение к драйверу двигателей L298
-    IN1 = 2; // Input1 подключен к выводу 2 
-    IN2 = 7;
-    ENA = 6;
+    
+    ENA = 2;
+    IN1 = 3;  
+    IN2 = 4;
 
-    IN3 = 5; // Input3 подключен к выводу 5 
-    IN4 = 4;
-    ENB = 3;
+    IN3 = 5;  
+    IN4 = 6;
+    ENB = 7;
 
     pinMode (ENA, OUTPUT); 
     pinMode (IN1, OUTPUT);
