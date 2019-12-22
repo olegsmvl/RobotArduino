@@ -3,7 +3,7 @@
         
 Odometer::Odometer(){
    
-    OdometerPinL = 8;
+    OdometerPinL = 9;
     OdometerPinR = 10;  
 
     pinMode (OdometerPinL, INPUT_PULLUP); 
@@ -11,6 +11,10 @@ Odometer::Odometer(){
 
     OdometerL = 0;
     OdometerR = 0;
+
+    PinStateL = false;
+    PinStateR = false;
+
 }
 
 int Odometer::GetOdometerL(){
@@ -24,6 +28,9 @@ int Odometer::GetOdometerR(){
 void Odometer::Loop(){
     bool currentPinStateL;
     bool currentPinStateR;
+
+
+    //OdometerL++;
     
     if (digitalRead(OdometerPinL) == LOW){
         currentPinStateL = true;
@@ -42,14 +49,14 @@ void Odometer::Loop(){
     if (currentPinStateL != PinStateL){
         if (currentPinStateL == true){
             OdometerL++;
-            PinStateL =currentPinStateL;
         }
+        PinStateL =currentPinStateL;
     }
 
     if (currentPinStateR != PinStateR){
         if (currentPinStateR == true){
             OdometerR++;
-            PinStateR =currentPinStateR;
         }
+        PinStateR =currentPinStateR;
     }
 }
