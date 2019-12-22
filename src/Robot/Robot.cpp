@@ -19,9 +19,6 @@ Robot::Robot(){
     pinMode (ENB, OUTPUT); 
     pinMode (IN3, OUTPUT);
     pinMode (IN4, OUTPUT);
-
-     
-
 }
 
 void Robot::Forward(int lWheelSpeed, int rWheelSpeed){
@@ -64,4 +61,8 @@ void Robot::Right(int lWheelSpeed, int rWheelSpeed){
 void Robot::Stop(){
   analogWrite(ENA,0);
   analogWrite(ENB,0);
+}
+
+void Robot::Loop(){
+  odometer.Loop();
 }

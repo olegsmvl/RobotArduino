@@ -9,8 +9,13 @@ class RobotManager
 	public:
         RobotManager();
         void ExecuteCommand(int command);
+        void Loop();
+        int GetOdometerL();
+        int GetOdometerR();
+        Robot robot;
     private:
-          Robot robot;
+          
+          
 
 };
 #endif

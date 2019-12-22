@@ -15,6 +15,8 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 
+#include "Robot\Odometer.h"
+
 class Robot
 {
 	public:
@@ -24,6 +26,8 @@ class Robot
         void Left(int lWheelSpeed, int rWheelSpeed);
         void Right(int lWheelSpeed, int rWheelSpeed);
         void Stop();
+        void Loop();
+        Odometer odometer;
     private:
         int IN1;
         int IN2;
@@ -31,6 +35,7 @@ class Robot
         int IN4;
         int ENA;
         int ENB;
+        
 
 };
 #endif

@@ -42,6 +42,8 @@ void setup() {
 }
 
 void loop() {
+  robotManager.Loop();
+  
   int x,y,z; //triple axis data
   Wire.beginTransmission(addr);
   Wire.write(0x03);
@@ -61,6 +63,8 @@ void loop() {
   doc["x"] = x;
   doc["y"] = y;
   doc["z"] = z;
+  doc["ol"] = robotManager.GetOdometerL();
+  doc["or"] = robotManager.GetOdometerR();
 
   serializeJson(doc, Serial);
 
@@ -83,5 +87,5 @@ while (Serial.available() > 0) {
 }
 
 
-  delay(50);
+  delay(200);
 }

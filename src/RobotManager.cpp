@@ -35,3 +35,15 @@ void RobotManager::ExecuteCommand(int command){
         break;
     }
 }
+
+void RobotManager::Loop(){
+    robot.Loop();
+}
+
+int RobotManager::GetOdometerL(){
+    return robot.odometer.GetOdometerL();
+}
+
+int RobotManager::GetOdometerR(){
+    return robot.odometer.GetOdometerR();
+}
