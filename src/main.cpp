@@ -1,24 +1,20 @@
 #include <Arduino.h>
-#include "Commands.h"
 #include <Wire.h> //I2C Arduino Library
-#include <Robot_2wd.h>
-#include <Robot.h>
+#include <Robot\Robot_2wd.h>
+#include "RobotManager.h"
 
 #include <ArduinoJson.h>
 
   StaticJsonDocument<200> doc;
   StaticJsonDocument<200> InData;
-    int addr = 0x1E; //I2C Address for The HMC5883
-    String inString;
+  int addr = 0x1E; //I2C Address for The HMC5883
+  String inString;
 
-    Robot robot;
+  RobotManager robotManager;
 
 void setup() {
   Serial.begin(9600);
   while (!Serial) continue;
-
-  pinMode(8, OUTPUT); 
-  digitalWrite(8, HIGH);
 
   Wire.begin();
   Wire.beginTransmission(addr);
@@ -80,31 +76,7 @@ while (Serial.available() > 0) {
     Serial.print("command: ");
     Serial.println(command);
 
-    switch(command){
-      case lighton:
-      digitalWrite(8, LOW);
-        break;
-      case lightoff:
-      digitalWrite(8, HIGH);
-        break;
-        case forward:
-      robot.Forward(100,100);
-        break;
-        case stop:
-      robot.Stop();
-        break;
-        default:
-        break;
-    }
-
-  // if (val == "lighton"){
-  //   digitalWrite(2, LOW);
-  // }
-
-  //   if (val == "lighton"){
-  //   digitalWrite(2, LOW);
-  // }
-
+    robotManager.ExecuteCommand(command);
 
     inString = ""; 
   }

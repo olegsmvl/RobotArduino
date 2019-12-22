@@ -20,9 +20,9 @@ class Robot
 	public:
         Robot();
         void Forward(int lWheelSpeed, int rWheelSpeed);
-        void Backward();
-        void Left();
-        void Right();
+        void Backward(int lWheelSpeed, int rWheelSpeed);
+        void Left(int lWheelSpeed, int rWheelSpeed);
+        void Right(int lWheelSpeed, int rWheelSpeed);
         void Stop();
     private:
         int IN1;
