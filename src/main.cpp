@@ -87,5 +87,5 @@ while (Serial.available() > 0) {
 }
 
 
-  delay(100);
+  //delay(100);
 }
