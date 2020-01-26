@@ -1,7 +1,8 @@
 #include <Arduino.h>
 #include <Wire.h> //I2C Arduino Library
-#include <Robot\Robot_2wd.h>
+//#include <Robot\Robot_2wd.h>
 #include "RobotManager.h"
+#include "Robot\Encoder.h"
 
 #include <ArduinoJson.h>
 
@@ -11,6 +12,8 @@
   String inString;
 
   RobotManager robotManager;
+  Encoder encoder;
+  bool on;  //светоодиод по таймеру
 
 void setup() {
   Serial.begin(9600);
@@ -22,9 +25,15 @@ void setup() {
   Wire.write(0x00); //Continuously Measure
   Wire.endTransmission();
 
+  on = false;
+  sei();
+  encoder.Init();
+  
+  pinMode(12, OUTPUT);
+
   // Allocate the JSON document
   //
-  // Inside the brackets, 200 is the RAM allocated to this document.
+    
   // Don't forget to change this value to match your requirement.
   // Use arduinojson.org/v6/assistant to compute the capacity.
 
@@ -88,4 +97,12 @@ while (Serial.available() > 0) {
 
 
   //delay(100);
+}
+
+ISR(TIMER4_COMPA_vect){   //обработчик прерывания от таймера
+  on = !on;
+  if (on)
+    digitalWrite(12, HIGH);
+  else
+     digitalWrite(12, LOW);
 }

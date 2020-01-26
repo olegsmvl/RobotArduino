@@ -4,7 +4,7 @@
 #ifndef Robot_2wd_h
 #define Robot_2wd_h
 
-#include <Servo.h>
+//#include <Servo.h>
 
 class Head
 {
@@ -15,8 +15,8 @@ class Head
 	void look_right();
 	void init();
 	private:
-	Servo servo_turn;	// создание объекта - серва поворота головы
-	Servo servo_tilt;	// создание объекта - серва наклона головы
+	//Servo servo_turn;	// создание объекта - серва поворота головы
+	//Servo servo_tilt;	// создание объекта - серва наклона головы
 };
 #endif
  
