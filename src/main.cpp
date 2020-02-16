@@ -15,6 +15,29 @@
   Encoder encoder;
   bool on;  //светоодиод по таймеру
 
+  int EncoderLpin = 18;
+  int EncoderRpin = 19;
+
+  int EncoderLcount = 0;
+  int EncoderRcount = 0;
+
+void EncoderL(){
+  EncoderLcount++;
+}
+
+void EncoderR(){
+  EncoderRcount++;
+}
+
+void InterruptInit(){
+  sei();
+  pinMode(EncoderLpin, INPUT_PULLUP);
+  pinMode(EncoderRpin, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(EncoderLpin), EncoderL, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(EncoderRpin), EncoderR, CHANGE);
+}
+
+
 void setup() {
   Serial.begin(9600);
   while (!Serial) continue;
@@ -24,6 +47,7 @@ void setup() {
   Wire.write(0x02);
   Wire.write(0x00); //Continuously Measure
   Wire.endTransmission();
+  InterruptInit();
 
   on = false;
   sei();
@@ -72,8 +96,10 @@ void loop() {
   doc["x"] = x;
   doc["y"] = y;
   doc["z"] = z;
-  doc["ol"] = robotManager.GetOdometerL();
-  doc["or"] = robotManager.GetOdometerR();
+  //doc["ol"] = robotManager.GetOdometerL();
+  //doc["or"] = robotManager.GetOdometerR();
+  doc["ol"] = EncoderLcount;
+  doc["or"] = EncoderRcount;
 
   serializeJson(doc, Serial);
 
