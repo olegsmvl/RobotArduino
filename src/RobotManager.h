@@ -12,6 +12,8 @@ class RobotManager
         void Loop();
         int GetOdometerL();
         int GetOdometerR();
+        void IncOdometerL();
+        void IncOdometerR();
         Robot robot;
     private:
           

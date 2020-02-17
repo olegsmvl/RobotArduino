@@ -47,3 +47,11 @@ int RobotManager::GetOdometerL(){
 int RobotManager::GetOdometerR(){
     return robot.odometer.GetOdometerR();
 }
+
+void RobotManager::IncOdometerR(){
+    robot.odometer.IncOdometerR();
+}
+
+void RobotManager::IncOdometerL(){
+    robot.odometer.IncOdometerL();
+}

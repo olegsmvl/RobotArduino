@@ -18,11 +18,19 @@ Odometer::Odometer(){
 }
 
 int Odometer::GetOdometerL(){
-  return OdometerL;
+    return OdometerL;
 }
 
 int Odometer::GetOdometerR(){
-  return OdometerR;
+    return OdometerR;
+}
+
+void Odometer::IncOdometerL(){
+    OdometerL++;
+}
+
+void Odometer::IncOdometerR(){
+    OdometerR++;
 }
 
 void Odometer::Loop(){

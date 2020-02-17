@@ -8,6 +8,8 @@ class Odometer
         int GetOdometerR();
         int GetOdometerL();
         void Loop();
+        void IncOdometerL();
+        void IncOdometerR();
     private:
         int OdometerPinL;
         int OdometerPinR;

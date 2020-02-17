@@ -13,6 +13,7 @@
 
   RobotManager robotManager;
   Encoder encoder;
+  Odometer odometer;
   bool on;  //светоодиод по таймеру
 
   int EncoderLpin = 18;
@@ -22,11 +23,11 @@
   int EncoderRcount = 0;
 
 void EncoderL(){
-  EncoderLcount++;
+  robotManager.IncOdometerL();
 }
 
 void EncoderR(){
-  EncoderRcount++;
+  robotManager.IncOdometerR();
 }
 
 void InterruptInit(){
@@ -96,10 +97,8 @@ void loop() {
   doc["x"] = x;
   doc["y"] = y;
   doc["z"] = z;
-  //doc["ol"] = robotManager.GetOdometerL();
-  //doc["or"] = robotManager.GetOdometerR();
-  doc["ol"] = EncoderLcount;
-  doc["or"] = EncoderRcount;
+  doc["ol"] = robotManager.GetOdometerL();
+  doc["or"] = robotManager.GetOdometerR();
 
   serializeJson(doc, Serial);
 
