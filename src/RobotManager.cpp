@@ -23,7 +23,7 @@ void RobotManager::ExecuteCommand(int command){
         robot.Backward(100,100);
         break;
       case left:
-        robot.Left(100,100);
+        robot.LeftValue(100,100,20);
         break;
       case right:
         robot.Right(100,100);

@@ -66,3 +66,14 @@ void Robot::Stop(){
 void Robot::Loop(){
   odometer.Loop();
 }
+
+void Robot::LeftValue(int lWheelSpeed, int rWheelSpeed, int value){
+    startValue = odometer.GetOdometerR();
+    Left(lWheelSpeed, rWheelSpeed);
+    while (odometer.GetOdometerR() - startValue < value)
+    {
+      
+    }
+    
+    Stop();
+}

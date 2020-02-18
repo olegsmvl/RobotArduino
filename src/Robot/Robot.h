@@ -25,6 +25,7 @@ class Robot
         void Backward(int lWheelSpeed, int rWheelSpeed);
         void Left(int lWheelSpeed, int rWheelSpeed);
         void Right(int lWheelSpeed, int rWheelSpeed);
+        void LeftValue(int lWheelSpeed, int rWheelSpeed, int value);
         void Stop();
         void Loop();
         Odometer odometer;
@@ -35,6 +36,7 @@ class Robot
         int IN4;
         int ENA;
         int ENB;
+        int startValue;
         
 
 };
