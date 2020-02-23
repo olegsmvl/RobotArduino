@@ -68,12 +68,30 @@ void Robot::Loop(){
 }
 
 void Robot::LeftValue(int lWheelSpeed, int rWheelSpeed, int value){
-    startValue = odometer.GetOdometerR();
+    startValueR = odometer.GetOdometerR();
+    stopValueR = startValueR + value;
+    startValueL = odometer.GetOdometerL();
+    stopValueL = startValueL + value;
     Left(lWheelSpeed, rWheelSpeed);
+    /*
     while (odometer.GetOdometerR() - startValue < value)
     {
       
     }
-    
+    */
     Stop();
+}
+
+void Robot::IncOdometerR(){
+    odometer.IncOdometerR();
+    
+    if (odometer.GetOdometerR() > stopValueR)
+      Stop();
+}
+
+void Robot::IncOdometerL(){
+    odometer.IncOdometerL();
+
+    if (odometer.GetOdometerL() > stopValueL)
+      Stop();
 }

@@ -49,9 +49,9 @@ int RobotManager::GetOdometerR(){
 }
 
 void RobotManager::IncOdometerR(){
-    robot.odometer.IncOdometerR();
+    robot.IncOdometerR();
 }
 
 void RobotManager::IncOdometerL(){
-    robot.odometer.IncOdometerL();
+    robot.IncOdometerL();
 }

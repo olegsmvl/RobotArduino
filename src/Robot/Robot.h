@@ -28,6 +28,8 @@ class Robot
         void LeftValue(int lWheelSpeed, int rWheelSpeed, int value);
         void Stop();
         void Loop();
+        void IncOdometerR();
+        void IncOdometerL();
         Odometer odometer;
     private:
         int IN1;
@@ -36,8 +38,10 @@ class Robot
         int IN4;
         int ENA;
         int ENB;
-        int startValue;
-        
+        int startValueL;
+        int stopValueL;
+        int startValueR;
+        int stopValueR;
 
 };
 #endif
