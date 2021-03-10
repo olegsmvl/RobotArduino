@@ -1,1 +1,4 @@
-формат команды
+- Remote control form desktop 
+- Control motor drivers
+- Send wheel encoder data
+- Use Raspberry UART to TCP bridge 
